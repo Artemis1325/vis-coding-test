@@ -1,4 +1,4 @@
-# HKUST VISLab Coding Challenge Walkthrough
+# HKUST VISLab Coding Challenge Realization
 
 This solution covers the required visualizations from the challenge:
 
