@@ -15,4 +15,4 @@ If they are not present, it uses deterministic demo data with the same column an
 
 Open `index.html` in a browser, or run a local static server from this directory.
 
-Notes from the process of solving these problems can be found in `note_zh.md`.
+Notes from the process of solving these problems can be found in `note_zh.md`: https://github.com/Artemis1325/vis-coding-test/blob/main/note_zh.md.
