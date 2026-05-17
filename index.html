@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HKUST VIS Coding Challenge</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">HKUST VISLab Coding Challenge</p>
+        <h1>Temperature Heatmaps and CSE Collaboration Views</h1>
+      </div>
+      <nav class="tabs" aria-label="Challenge sections">
+        <button class="tab is-active" data-target="temperature">Level 1-2</button>
+        <button class="tab" data-target="network">Level 3</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="temperature" class="panel is-active" aria-labelledby="temperature-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Year / Month Matrix</p>
+            <h2 id="temperature-title">Hong Kong Daily Temperature</h2>
+          </div>
+          <div class="toolbar">
+            <label class="select-label">
+              Measure
+              <select id="temperature-measure">
+                <option value="max">Monthly maximum</option>
+                <option value="min">Monthly minimum</option>
+              </select>
+            </label>
+            <label class="select-label">
+              Detail years
+              <select id="detail-years">
+                <option value="5">Last 5 years</option>
+                <option value="8" selected>Last 8 years</option>
+                <option value="10">Last 10 years</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="notice" id="temperature-source"></div>
+        <div class="viz-stack">
+          <div class="viz-frame">
+            <svg id="heatmap" role="img" aria-label="Monthly temperature heatmap"></svg>
+          </div>
+          <div class="viz-frame">
+            <svg id="daily-lines" role="img" aria-label="Daily temperature mini line charts"></svg>
+          </div>
+        </div>
+      </section>
+
+      <section id="network" class="panel" aria-labelledby="network-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Linked Views</p>
+            <h2 id="network-title">HKUST CSE Coauthor Subgraph</h2>
+          </div>
+          <div class="toolbar">
+            <label class="select-label">
+              Matrix order
+              <select id="matrix-order">
+                <option value="degree" selected>Collaborator count</option>
+                <option value="name">Name</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="notice" id="graph-source"></div>
+        <div class="network-layout">
+          <div class="viz-frame">
+            <svg id="node-link" role="img" aria-label="CSE professor node-link diagram"></svg>
+          </div>
+          <div class="viz-frame">
+            <svg id="matrix" role="img" aria-label="CSE professor collaboration matrix"></svg>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="tooltip" class="tooltip" role="status"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
